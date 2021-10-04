@@ -12,8 +12,8 @@ function compute()
             var interest = principal * years * rate /100;
             var year = new Date().getFullYear()+parseInt(years);
             //var fullrate = parseInt(principal) + parseInt(interest);
-            var outputString = 'If you deposit <mark>'+principal.toString()+'</mark>,\nat an interest rate of <mark>'+rate.toString()+'%</mark>.\nYou will receive an amount of <mark>'+interest.toString()+'</mark>,\nin the year <mark>'+year.toString()+'</mark>';
-            document.getElementById("result").innerText=outputString;
+            var outputString = 'If you deposit <mark>'+principal.toString()+'</mark>,<br/>at an interest rate of <mark>'+rate.toString()+'%</mark>.<br/>You will receive an amount of <mark>'+interest.toString()+'</mark>,<br/>in the year <mark>'+year.toString()+'</mark>';
+            document.getElementById("result").innerHTML=outputString;
         }
         else
         {
