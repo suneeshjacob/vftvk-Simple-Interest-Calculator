@@ -3,7 +3,7 @@ function compute()
     //p = document.getElementById("principal").value;
     var flag = 0;
     var principal = document.getElementById("principal").value;
-    if (isNan(principal)==false)
+    if (isNaN(principal)==false)
     {
         if (parseInt(principal)>0)
         {
