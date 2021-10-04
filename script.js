@@ -2,13 +2,21 @@ function compute()
 {
     //p = document.getElementById("principal").value;
     var principal = document.getElementById("principal").value;
-    var rate = document.getElementById("rate").value;
-    var years = document.getElementById("years").value;
-    var interest = principal * years * rate /100;
-    var year = new Date().getFullYear()+parseInt(years);
-    //var fullrate = parseInt(principal) + parseInt(interest);
-    var outputString = 'If you deposit '+principal.toString()+',\nat an interest rate of '+rate.toString()+'%.\nYou will receive an amount of '+interest.toString()+',\nin the year '+year.toString();
-    document.getElementById("result").innerText=outputString;
+    if (isNan(principal)==false)
+    {
+        var rate = document.getElementById("rate").value;
+        var years = document.getElementById("years").value;
+        var interest = principal * years * rate /100;
+        var year = new Date().getFullYear()+parseInt(years);
+        //var fullrate = parseInt(principal) + parseInt(interest);
+        var outputString = 'If you deposit '+principal.toString()+',\nat an interest rate of '+rate.toString()+'%.\nYou will receive an amount of '+interest.toString()+',\nin the year '+year.toString();
+        document.getElementById("result").innerText=outputString;
+    }
+    else
+    {
+        window.alert('Enter a positive number');
+        document.getElementById("principal").focus();
+    }
 }
 
 function updateRate() 
