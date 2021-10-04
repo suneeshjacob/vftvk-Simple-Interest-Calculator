@@ -1,18 +1,30 @@
 function compute()
 {
     //p = document.getElementById("principal").value;
+    var flag = 0;
     var principal = document.getElementById("principal").value;
     if (isNan(principal)==false)
     {
-        var rate = document.getElementById("rate").value;
-        var years = document.getElementById("years").value;
-        var interest = principal * years * rate /100;
-        var year = new Date().getFullYear()+parseInt(years);
-        //var fullrate = parseInt(principal) + parseInt(interest);
-        var outputString = 'If you deposit '+principal.toString()+',\nat an interest rate of '+rate.toString()+'%.\nYou will receive an amount of '+interest.toString()+',\nin the year '+year.toString();
-        document.getElementById("result").innerText=outputString;
+        if (parseInt(principal)>0)
+        {
+            var rate = document.getElementById("rate").value;
+            var years = document.getElementById("years").value;
+            var interest = principal * years * rate /100;
+            var year = new Date().getFullYear()+parseInt(years);
+            //var fullrate = parseInt(principal) + parseInt(interest);
+            var outputString = 'If you deposit '+principal.toString()+',\nat an interest rate of '+rate.toString()+'%.\nYou will receive an amount of '+interest.toString()+',\nin the year '+year.toString();
+            document.getElementById("result").innerText=outputString;
+        }
+        else
+        {
+            flag=1;
+        }
     }
     else
+    {
+        flag=1
+    }
+    if (flag==1)
     {
         window.alert('Enter a positive number');
         document.getElementById("principal").focus();
